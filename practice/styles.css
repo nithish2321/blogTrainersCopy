@@ -13,6 +13,32 @@
     border-top: 5px solid white;
     position: sticky;
     top:0;
+    z-index: 1000;
+}
+
+/* styles.css */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* This pushes title left and select right */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: transparent;
+}
+
+#category-filter {
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+/* Ensure header children don't inherit the black background of '*' */
+.header-content * {
+    background-color: transparent;
 }
 
 h1,h2{
@@ -36,12 +62,72 @@ h1,h2{
     flex: 1 1 300px;
     border-radius: 10px 10px 0px 0px;
     border-top: 5px solid rgba(4, 163, 255, 0.93);
+    cursor:pointer;
 }
 
 p{
     padding: 10px;
     border: 2px dashed white;
 }
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
+/* Modal Overlay: Dark background covering the whole screen */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+    background-color: white;
+    color: black;
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    max-width: 600px;
+    position: relative;
+    text-align: left;
+}
+
+.modal-content h1, .modal-content p {
+    background: transparent;
+    color: black;
+}
+
+/* Close Button */
+#close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    background: transparent;
+}
+
+/* Cursor pointer for cards to show they are clickable */
+.card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+
 
 
 
